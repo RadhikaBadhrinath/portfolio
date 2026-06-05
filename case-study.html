@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Contact Classification Pipeline — Radhika Balaji</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafafa; --surface: #ffffff; --ink: #18181b; --grey: #6b7280;
+    --grey-light: #9ca3af; --line: #e7e7e9; --accent: #2563eb;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 2rem; }
+  @media (max-width: 600px) { .wrap { padding: 0 1.3rem; } }
+
+  header.top { border-bottom: 1px solid var(--line); background: rgba(250,250,250,0.85); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 50; }
+  .top-inner { max-width: 720px; margin: 0 auto; padding: 1.2rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+  @media (max-width: 600px) { .top-inner { padding: 1.1rem 1.3rem; } }
+  .top-inner .name { font-weight: 600; font-size: 1rem; }
+  .top-inner a.back { text-decoration: none; color: var(--grey); font-size: 0.9rem; font-weight: 500; }
+  .top-inner a.back:hover { color: var(--ink); }
+
+  .hero { padding: 4rem 0 2rem; }
+  .hero .tag { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+  .hero h1 { font-size: clamp(1.9rem, 4.5vw, 2.6rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.2rem; }
+  .hero .lede { font-size: 1.12rem; color: var(--grey); }
+
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2.5rem 0; }
+  @media (max-width: 560px) { .metrics { grid-template-columns: 1fr; } }
+  .metric { background: var(--surface); border: 1px solid var(--line); border-radius: 0.8rem; padding: 1.4rem; }
+  .metric .num { font-size: 1.45rem; font-weight: 700; letter-spacing: -0.02em; color: var(--accent); line-height: 1.1; }
+  .metric .lbl { font-size: 0.85rem; color: var(--grey); margin-top: 0.5rem; }
+
+  .overview { border-top: 1px solid var(--line); padding: 2.2rem 0; }
+  .row { display: grid; grid-template-columns: 130px 1fr; gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+  .row:last-of-type { border-bottom: none; }
+  @media (max-width: 540px) { .row { grid-template-columns: 1fr; gap: 0.3rem; } }
+  .row .k { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-light); padding-top: 0.15rem; }
+  .row .v { color: var(--ink); font-size: 1rem; }
+  .row .v.muted { color: var(--grey); }
+
+  .tech { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tech span { font-size: 0.82rem; font-weight: 500; padding: 0.32rem 0.8rem; background: var(--surface); border: 1px solid var(--line); border-radius: 0.4rem; color: var(--ink); }
+
+  .links-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
+  .btn { text-decoration: none; padding: 0.8rem 1.5rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.92rem; transition: all 0.2s; }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-primary:hover { background: #000; }
+  .btn-ghost { border: 1.5px solid var(--line); color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  footer { border-top: 1px solid var(--line); padding: 2.5rem 0 4rem; margin-top: 1.5rem; }
+  footer p { font-size: 0.85rem; color: var(--grey-light); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="name">Radhika Balaji</div>
+    <a class="back" href="index.html">← Back to portfolio</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="tag">Project Overview</div>
+    <h1>AI Contact Classification Pipeline</h1>
+    <p class="lede">An automated pipeline that categorized 90,000+ business contacts using AI — replacing weeks of manual sorting with a process that runs in hours.</p>
+  </section>
+
+  <div class="metrics">
+    <div class="metric"><div class="num">90,000+</div><div class="lbl">Contacts processed</div></div>
+    <div class="metric"><div class="num">Weeks → Hours</div><div class="lbl">Time reduced</div></div>
+    <div class="metric"><div class="num">4</div><div class="lbl">Data fields added</div></div>
+  </div>
+
+  <section class="overview">
+    <div class="row">
+      <div class="k">Problem</div>
+      <div class="v muted">A database of 90,000+ contacts had names and emails but no categorization — making it impossible to segment or target outreach effectively.</div>
+    </div>
+    <div class="row">
+      <div class="k">Solution</div>
+      <div class="v muted">A Python pipeline that sends each contact to an AI model and assigns a type, subtype, and industry based on their email, company, and role.</div>
+    </div>
+    <div class="row">
+      <div class="k">Outcome</div>
+      <div class="v muted">Every contact fully categorized and ready for CRM import. The process is repeatable — it re-runs on new contacts anytime to keep the data clean.</div>
+    </div>
+    <div class="row">
+      <div class="k">Fields added</div>
+      <div class="v">
+        <div class="tech"><span>Contact Type</span><span>Subtype</span><span>Industry</span><span>Validated Data</span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="k">Tools</div>
+      <div class="v">
+        <div class="tech"><span>Python</span><span>OpenAI API</span><span>Pandas</span><span>HubSpot</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="links-row">
+    <a class="btn btn-primary" href="https://github.com/RadhikaBadhrinath" target="_blank">View the code →</a>
+    <a class="btn btn-ghost" href="index.html">Back to portfolio</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Radhika Balaji</p>
+  </div>
+</footer>
+
+</body>
+</html>

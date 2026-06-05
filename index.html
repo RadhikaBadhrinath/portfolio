@@ -1,144 +1,395 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Radhika Balaji's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radhika Balaji</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafafa;
+    --surface: #ffffff;
+    --ink: #18181b;
+    --grey: #6b7280;
+    --grey-light: #9ca3af;
+    --line: #e7e7e9;
+    --accent: #2563eb;
+    --sans: 'DM Sans', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 2rem; }
+  @media (max-width: 600px) { .wrap { padding: 0 1.3rem; } }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Radhika Balaji's Portfolio<br />
-						</h1>
-						<p>Skilled in SQL, Python and Tableau <a href="https://www.linkedin.com/in/radhika-balaji/">@RadhikaBalaji</a> 
-					
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+  /* ── Top bar ─────────────────────────────── */
+  header.top {
+    border-bottom: 1px solid var(--line);
+    background: rgba(250,250,250,0.85);
+    backdrop-filter: blur(10px);
+    position: sticky; top: 0; z-index: 50;
+  }
+  .top-inner {
+    max-width: 920px; margin: 0 auto; padding: 1.3rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  @media (max-width: 600px) { .top-inner { padding: 1.1rem 1.3rem; } }
+  .top-inner .name { font-weight: 600; font-size: 1rem; letter-spacing: -0.01em; }
+  .top-inner .nav { display: flex; gap: 1.6rem; }
+  .top-inner .nav a {
+    text-decoration: none; color: var(--grey); font-size: 0.9rem;
+    font-weight: 500; transition: color 0.18s;
+  }
+  .top-inner .nav a:hover { color: var(--ink); }
+  @media (max-width: 480px) { .top-inner .nav { gap: 1.1rem; } .top-inner .nav a { font-size: 0.82rem; } }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Radhika Balaji</a>
-					</header>
+  /* ── Intro ───────────────────────────────── */
+  .intro { padding: 5rem 0 3.5rem; }
+  .intro .eyebrow {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 1.3rem;
+  }
+  .intro h1 {
+    font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 600;
+    letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 1.5rem;
+  }
+  .intro p { font-size: 1.1rem; color: var(--grey); max-width: 60ch; }
+  .intro .accent-line { width: 44px; height: 3px; background: var(--accent); margin-top: 2.5rem; }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
-							
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/radhika-balaji/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-							<li><a href="https://github.com/RadhikaBadhrinath" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						    <li><a href="radhika.us310@gmail.com"  class="fa fa-envelope-o"><span class="icons">email</span></a></li>
+  /* ── Section headings ────────────────────── */
+  .section { padding: 3.5rem 0; }
+  .section-head {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 2.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--line);
+  }
+  .section-head h2 { font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; }
+  .section-head .count { font-size: 0.85rem; color: var(--grey-light); font-weight: 500; }
 
-					</nav>
+  /* ── Projects ────────────────────────────── */
+  .project {
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: 0.9rem; overflow: hidden; margin-bottom: 1.5rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .project:hover { border-color: #d4d4d8; box-shadow: 0 6px 24px rgba(0,0,0,0.05); }
 
-				<!-- Main -->
-					<div id="main">
+  .project-visual {
+    height: 165px; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; border-bottom: 1px solid var(--line);
+  }
+  .project-visual svg.bgviz { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .v-icon {
+    position: relative; z-index: 2; font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.13em; text-transform: uppercase; color: var(--grey);
+    background: rgba(255,255,255,0.92); padding: 0.4rem 1rem;
+    border-radius: 2rem; border: 1px solid var(--line);
+  }
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="https://github.com/RadhikaBadhrinath/Credit-Card-Fraud-Detection">Credit Card Fraud Detection<br />
-									</a></h2>
-							   </header>
-							   <a href="https://github.com/RadhikaBadhrinath/Credit-Card-Fraud-Detection" class="image fit"><img src="images/credicard.jpg" alt="" /></a>
-							   <p>Detection of fraudulent transactions while minimizing the incorrect fraud classifications.
-							   </p>
-							   <ul class="actions special">
-							   <li><a href="https://github.com/RadhikaBadhrinath/Credit-Card-Fraud-Detection" class="button">View Project</a></li>
-							   </ul>
-						   </article>
-									
+  /* visual color tints */
+  .tint-blue { background: #f4f7fb; }
+  .tint-warm { background: #f6f3ef; }
+  .tint-green { background: #f0f5f2; }
+  .tint-violet { background: #f4f2f9; }
+  .tint-clay { background: #f6f2f0; }
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-									
-										<h2><a href="https://github.com/RadhikaBadhrinath/Exploratory-Data-Analysis-Investment">Exploratory Data Analysis<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/RadhikaBadhrinath/Exploratory-Data-Analysis-Investment" class="image fit"><img src="images/investment.jpg" alt="" /></a>
-									<p>Analysis on the dataset recording people to invest in each other in a way that is financially and socially rewarding.</p>
+  .project-body { padding: 1.8rem 2rem 2rem; }
+  @media (max-width: 600px) { .project-body { padding: 1.5rem 1.4rem; } }
+  .project-body h3 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.7rem; }
+  .project-body p { color: var(--grey); font-size: 0.97rem; margin-bottom: 1.3rem; }
+  .tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.4rem; }
+  .tech span {
+    font-size: 0.78rem; font-weight: 500; padding: 0.28rem 0.7rem;
+    background: var(--bg); border: 1px solid var(--line); border-radius: 0.4rem; color: var(--grey);
+  }
+  .project-link {
+    text-decoration: none; color: var(--ink); font-weight: 600; font-size: 0.9rem;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    border-bottom: 1.5px solid var(--accent); padding-bottom: 1px; transition: gap 0.2s;
+  }
+  .project-link:hover { gap: 0.75rem; }
 
-									
-									<ul class="actions special">
-										<li><a href="https://github.com/RadhikaBadhrinath/Exploratory-Data-Analysis-Investment" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
+  /* ── About ───────────────────────────────── */
+  .about-text { max-width: 64ch; }
+  .about-text p { color: var(--grey); font-size: 1rem; margin-bottom: 1.1rem; }
+  .about-text p strong { color: var(--ink); font-weight: 600; }
+  .skills-block { margin-top: 2rem; }
+  .skills-row { margin-bottom: 1.3rem; }
+  .skills-row .label {
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--grey-light); margin-bottom: 0.6rem;
+  }
+  .skills-row .items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skills-row .items span {
+    font-size: 0.85rem; padding: 0.35rem 0.85rem; background: var(--surface);
+    border: 1px solid var(--line); border-radius: 0.4rem; color: var(--ink);
+  }
 
-										<h2><a href="https://github.com/RadhikaBadhrinath/Statistics-Fifa-MobileNetwork">FIFA World cup Analysis<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/RadhikaBadhrinath/Statistics-Fifa-MobileNetwork" class="image fit"><img src="images/fifa.jpg" alt="" /></a>
-									<p>Performing statistical analysis on the fifa world cup dataset. </p>
+  /* ── Background ──────────────────────────── */
+  .bg-item {
+    display: grid; grid-template-columns: 130px 1fr; gap: 1.5rem;
+    padding: 1.4rem 0; border-bottom: 1px solid var(--line);
+  }
+  .bg-item:last-child { border-bottom: none; }
+  @media (max-width: 560px) { .bg-item { grid-template-columns: 1fr; gap: 0.3rem; } }
+  .bg-item .date { font-size: 0.88rem; color: var(--grey-light); font-weight: 500; }
+  .bg-item .info h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.15rem; }
+  .bg-item .info .org { font-size: 0.9rem; color: var(--grey); margin-bottom: 0.4rem; }
+  .bg-item .info p { font-size: 0.92rem; color: var(--grey); }
 
-									<ul class="actions special">
-										<li><a href="https://github.com/RadhikaBadhrinath/Statistics-Fifa-MobileNetwork" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/RadhikaBadhrinath/IPL-Bidding">IPL Match Bidding App Analysis using SQL<br />
-										</a></h2>
-										<p>SQL project to get the insights of the complete match details and about the players, which helps the bidder to bid the IPL matches. </p>
-									</header>
-									<a href="https://github.com/RadhikaBadhrinath/IPL-Bidding" class="image main"><img src="images/Bid.jpg" alt="" /></a>
-									<ul class="actions special">
-										<li><a href="https://github.com/RadhikaBadhrinath/IPL-Bidding" class="button large">View project</a></li>
-									</ul>
-								</article>
+  /* ── Footer ──────────────────────────────── */
+  footer { border-top: 1px solid var(--line); padding: 3rem 0 4rem; margin-top: 2rem; }
+  footer .links { display: flex; gap: 1.3rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+  footer .links a {
+    text-decoration: none; color: var(--ink); font-size: 0.95rem; font-weight: 500;
+    border-bottom: 1.5px solid var(--accent); padding-bottom: 1px; transition: opacity 0.2s;
+  }
+  footer .links a:hover { opacity: 0.65; }
+  footer .copy { font-size: 0.85rem; color: var(--grey-light); }
+</style>
+</head>
+<body>
 
-					     
-								<article>
-									<header>
+<header class="top">
+  <div class="top-inner">
+    <div class="name">Radhika Balaji</div>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#background">Background</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-										<h2><a href="https://github.com/RadhikaBadhrinath/Avocado-Sales">Avocado Sales<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/RadhikaBadhrinath/Avocado-Sales" class="image fit"><img src="images/avocado.jpg" alt="" /></a>
-									<p>Excel project to analyze the patterns of the Historical data on avocado prices and sales volume in multiple US markets. </p>
+<div class="wrap">
 
-									<ul class="actions special">
-										<li><a href="https://github.com/RadhikaBadhrinath/Avocado-Sales" class="button">View Project</a></li>
-									</ul>
-								</article>
-								
-							
-					</footer>
+  <section class="intro">
+    <div class="eyebrow">CRM Operations &amp; Data Analyst</div>
+    <h1>Radhika Balaji</h1>
+    <p>I work with data, CRM systems, and automation — building pipelines, organizing information at scale, and turning raw data into something usable. This is a selection of projects I've worked on.</p>
+    <div class="accent-line"></div>
+  </section>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+  <section class="section" id="work">
+    <div class="section-head">
+      <h2>Selected Work</h2>
+      <span class="count">5 projects</span>
+    </div>
 
-			</div>
+    <!-- 1. AI Pipeline — network nodes -->
+    <div class="project">
+      <div class="project-visual tint-blue">
+        <svg class="bgviz" viewBox="0 0 920 165" preserveAspectRatio="xMidYMid slice">
+          <g stroke="#d3e0f0" stroke-width="1.5">
+            <line x1="120" y1="45" x2="320" y2="82"/><line x1="120" y1="120" x2="320" y2="82"/>
+            <line x1="320" y1="82" x2="540" y2="50"/><line x1="320" y1="82" x2="540" y2="115"/>
+            <line x1="540" y1="50" x2="760" y2="82"/><line x1="540" y1="115" x2="760" y2="82"/>
+            <line x1="760" y1="82" x2="860" y2="45"/><line x1="760" y1="82" x2="860" y2="120"/>
+          </g>
+          <g fill="#c2d4ec">
+            <circle cx="120" cy="45" r="7"/><circle cx="120" cy="120" r="7"/>
+            <circle cx="320" cy="82" r="10"/><circle cx="540" cy="50" r="7"/>
+            <circle cx="540" cy="115" r="7"/><circle cx="760" cy="82" r="10"/>
+            <circle cx="860" cy="45" r="7"/><circle cx="860" cy="120" r="7"/>
+          </g>
+        </svg>
+        <span class="v-icon">Python · OpenAI · HubSpot</span>
+      </div>
+      <div class="project-body">
+        <h3>AI-Powered Contact Classification Pipeline</h3>
+        <p>A Python pipeline that uses the OpenAI API to classify and enrich a dataset of 90,000+ business contacts — assigning contact type, subtype, and industry, removing duplicates, validating records, and preparing the data for import into HubSpot CRM. Built to replace a manual process that previously took weeks.</p>
+        <div class="tech"><span>Python</span><span>OpenAI API</span><span>Pandas</span><span>HubSpot</span><span>Data Enrichment</span></div>
+      </div>
+    </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <!-- 2. Website — layout wireframe -->
+    <div class="project">
+      <div class="project-visual tint-warm">
+        <svg class="bgviz" viewBox="0 0 920 165" preserveAspectRatio="xMidYMid slice">
+          <g stroke="#e3dacb" stroke-width="1.5" fill="none">
+            <rect x="120" y="30" width="680" height="26" rx="3"/>
+            <rect x="120" y="72" width="320" height="62" rx="3"/>
+            <rect x="460" y="72" width="155" height="62" rx="3"/>
+            <rect x="635" y="72" width="165" height="62" rx="3"/>
+          </g>
+          <g fill="#ece3d4">
+            <rect x="135" y="40" width="90" height="6" rx="3"/>
+            <rect x="135" y="86" width="120" height="6" rx="3"/>
+            <rect x="135" y="100" width="200" height="6" rx="3"/>
+            <rect x="135" y="114" width="160" height="6" rx="3"/>
+          </g>
+        </svg>
+        <span class="v-icon">WordPress · Beaver Builder</span>
+      </div>
+      <div class="project-body">
+        <h3>Fair Winds Capital Website</h3>
+        <p>Designed and built the website for an investment advisory firm using WordPress and Beaver Builder — a five-page site with a consistent design system and separate content paths for founders and investors.</p>
+        <div class="tech"><span>WordPress</span><span>Beaver Builder</span><span>Design System</span></div>
+        <a class="project-link" href="https://fairwinds.capital" target="_blank">Visit site →</a>
+      </div>
+    </div>
 
-	</body>
+    <!-- 3. Fraud — scatter plot with decision boundary -->
+    <div class="project">
+      <div class="project-visual tint-green">
+        <svg class="bgviz" viewBox="0 0 920 165" preserveAspectRatio="xMidYMid slice">
+          <path d="M120 135 Q400 60 820 40" stroke="#cfe0d7" stroke-width="2" fill="none" stroke-dasharray="6 5"/>
+          <g fill="#cde0d6">
+            <circle cx="200" cy="110" r="4"/><circle cx="250" cy="95" r="4"/><circle cx="300" cy="120" r="4"/>
+            <circle cx="340" cy="100" r="4"/><circle cx="400" cy="115" r="4"/><circle cx="450" cy="92" r="4"/>
+            <circle cx="520" cy="105" r="4"/><circle cx="580" cy="118" r="4"/><circle cx="630" cy="98" r="4"/>
+          </g>
+          <g fill="#bcd2c8">
+            <circle cx="320" cy="55" r="4"/><circle cx="420" cy="48" r="4"/><circle cx="520" cy="58" r="4"/>
+            <circle cx="600" cy="44" r="4"/><circle cx="690" cy="52" r="4"/><circle cx="740" cy="40" r="4"/>
+          </g>
+        </svg>
+        <span class="v-icon">Python · Random Forest</span>
+      </div>
+      <div class="project-body">
+        <h3>Credit Card Fraud Detection</h3>
+        <p>A machine learning model built to detect fraudulent transactions while minimizing incorrect fraud classifications. The optimized Random Forest model produced 9 false positives across 71,091 transactions.</p>
+        <div class="tech"><span>Python</span><span>Random Forest</span><span>Scikit-learn</span><span>Model Optimization</span></div>
+        <a class="project-link" href="https://github.com/RadhikaBadhrinath/Credit-Card-Fraud-Detection" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+
+    <!-- 4. EDA — bar chart -->
+    <div class="project">
+      <div class="project-visual tint-violet">
+        <svg class="bgviz" viewBox="0 0 920 165" preserveAspectRatio="xMidYMid slice">
+          <g fill="#ddd6ec">
+            <rect x="180" y="95" width="34" height="50" rx="2"/>
+            <rect x="240" y="70" width="34" height="75" rx="2"/>
+            <rect x="300" y="50" width="34" height="95" rx="2"/>
+            <rect x="360" y="82" width="34" height="63" rx="2"/>
+            <rect x="420" y="38" width="34" height="107" rx="2"/>
+            <rect x="480" y="60" width="34" height="85" rx="2"/>
+            <rect x="540" y="92" width="34" height="53" rx="2"/>
+            <rect x="600" y="48" width="34" height="97" rx="2"/>
+            <rect x="660" y="75" width="34" height="70" rx="2"/>
+            <rect x="720" y="58" width="34" height="87" rx="2"/>
+          </g>
+          <line x1="160" y1="145" x2="780" y2="145" stroke="#d2cae3" stroke-width="1.5"/>
+        </svg>
+        <span class="v-icon">Python · Data Analysis</span>
+      </div>
+      <div class="project-body">
+        <h3>Exploratory Data Analysis — Investment Behavior</h3>
+        <p>Univariate, bivariate, and multivariate analysis of a dataset on lending and investment behavior, examining sector preferences, risk profiles, and participation trends among investors and borrowers.</p>
+        <div class="tech"><span>Python</span><span>Pandas</span><span>Feature Engineering</span><span>EDA</span></div>
+        <a class="project-link" href="https://github.com/RadhikaBadhrinath/Exploratory-Data-Analysis-Investment" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+
+    <!-- 5. SQL — data table rows -->
+    <div class="project">
+      <div class="project-visual tint-clay">
+        <svg class="bgviz" viewBox="0 0 920 165" preserveAspectRatio="xMidYMid slice">
+          <g stroke="#e6dcd8" stroke-width="1.5">
+            <line x1="150" y1="45" x2="770" y2="45"/><line x1="150" y1="73" x2="770" y2="73"/>
+            <line x1="150" y1="101" x2="770" y2="101"/><line x1="150" y1="129" x2="770" y2="129"/>
+            <line x1="305" y1="32" x2="305" y2="142"/><line x1="460" y1="32" x2="460" y2="142"/>
+            <line x1="615" y1="32" x2="615" y2="142"/>
+          </g>
+          <g fill="#ebe0db">
+            <rect x="165" y="52" width="90" height="6" rx="3"/><rect x="320" y="52" width="90" height="6" rx="3"/>
+            <rect x="475" y="52" width="90" height="6" rx="3"/><rect x="630" y="52" width="90" height="6" rx="3"/>
+            <rect x="165" y="80" width="90" height="6" rx="3"/><rect x="320" y="80" width="90" height="6" rx="3"/>
+            <rect x="475" y="80" width="90" height="6" rx="3"/><rect x="630" y="80" width="90" height="6" rx="3"/>
+            <rect x="165" y="108" width="90" height="6" rx="3"/><rect x="320" y="108" width="90" height="6" rx="3"/>
+            <rect x="475" y="108" width="90" height="6" rx="3"/><rect x="630" y="108" width="90" height="6" rx="3"/>
+          </g>
+        </svg>
+        <span class="v-icon">SQL · Data Modeling</span>
+      </div>
+      <div class="project-body">
+        <h3>IPL Match Bidding Analysis</h3>
+        <p>A SQL project analyzing complete match and player data to surface insights that support bidding decisions across IPL matches.</p>
+        <div class="tech"><span>SQL</span><span>Data Modeling</span><span>Analysis</span></div>
+        <a class="project-link" href="https://github.com/RadhikaBadhrinath/IPL-Bidding" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section" id="about">
+    <div class="section-head"><h2>About</h2></div>
+    <div class="about-text">
+      <p>I'm a CRM Operations &amp; Data Analyst currently working with an investment advisory firm, where I build automated data pipelines, manage and enrich CRM records, and support reporting and outreach.</p>
+      <p>My background combines <strong>data science</strong>, <strong>investment research</strong>, and <strong>digital execution</strong>. I work mostly with HubSpot, Python, and SQL, and I'm comfortable moving between technical work and business context.</p>
+    </div>
+    <div class="skills-block">
+      <div class="skills-row">
+        <div class="label">CRM &amp; Operations</div>
+        <div class="items"><span>HubSpot</span><span>Salesforce</span><span>Data Enrichment</span><span>Segmentation</span><span>Workflow Automation</span></div>
+      </div>
+      <div class="skills-row">
+        <div class="label">Data &amp; Analytics</div>
+        <div class="items"><span>Python</span><span>SQL</span><span>Excel</span><span>Tableau</span><span>Power BI</span></div>
+      </div>
+      <div class="skills-row">
+        <div class="label">AI &amp; Tools</div>
+        <div class="items"><span>OpenAI API</span><span>Claude</span><span>ChatGPT</span><span>GitHub</span><span>WordPress</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="background">
+    <div class="section-head"><h2>Background</h2></div>
+    <div class="bg-item">
+      <div class="date">2025 — Present</div>
+      <div class="info">
+        <h4>CRM Operations &amp; Data Analyst</h4>
+        <div class="org">Fairwinds Capital</div>
+        <p>Data pipelines, CRM management, reporting, and investor research.</p>
+      </div>
+    </div>
+    <div class="bg-item">
+      <div class="date">2022</div>
+      <div class="info">
+        <h4>Post Graduate Program, Data Science &amp; Engineering</h4>
+        <div class="org">Great Lakes Institute of Management</div>
+      </div>
+    </div>
+    <div class="bg-item">
+      <div class="date">2019</div>
+      <div class="info">
+        <h4>B.Tech, Civil Engineering</h4>
+        <div class="org">BSA Crescent Institute of Science &amp; Technology</div>
+      </div>
+    </div>
+    <div class="bg-item">
+      <div class="date">Certification</div>
+      <div class="info">
+        <h4>HubSpot Inbound Certified</h4>
+        <div class="org">HubSpot Academy</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="section-head" id="contact"><h2>Contact</h2></div>
+    <div class="links">
+      <a href="mailto:radhika.us310@gmail.com">radhika.us310@gmail.com</a>
+      <a href="https://www.linkedin.com/in/radhika-balaji/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/RadhikaBadhrinath" target="_blank">GitHub</a>
+    </div>
+    <div class="copy">© 2026 Radhika Balaji</div>
+  </div>
+</footer>
+
+</body>
 </html>

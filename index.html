@@ -94,12 +94,12 @@
     border-radius: 2rem; border: 1px solid var(--line);
   }
 
-  /* visual color tints */
-  .tint-blue { background: #f4f7fb; }
-  .tint-warm { background: #f6f3ef; }
-  .tint-green { background: #f0f5f2; }
+  .tint-blue   { background: #f4f7fb; }
+  .tint-warm   { background: #f6f3ef; }
+  .tint-green  { background: #f0f5f2; }
   .tint-violet { background: #f4f2f9; }
-  .tint-clay { background: #f6f2f0; }
+  .tint-clay   { background: #f6f2f0; }
+  .tint-teal   { background: #f0f6f5; }
 
   .project-body { padding: 1.8rem 2rem 2rem; }
   @media (max-width: 600px) { .project-body { padding: 1.5rem 1.4rem; } }
@@ -173,9 +173,9 @@
 <div class="wrap">
 
   <section class="intro">
-    <div class="eyebrow">CRM Operations &amp; Data Analyst</div>
+    <div class="eyebrow">Business Operations &amp; Data Analyst</div>
     <h1>Radhika Balaji</h1>
-    <p>I work with data, CRM systems, and automation — building pipelines, organizing information at scale, and turning raw data into something usable. This is a selection of projects I've worked on.</p>
+    <p>I work with data, reporting systems, and automation — building dashboards, organizing information at scale, and turning raw data into clear business insights. Based in Rogers, AR, focused on CPG, retail, and sales operations. This is a selection of projects I've worked on.</p>
     <div class="accent-line"></div>
   </section>
 
@@ -185,7 +185,43 @@
       <span class="count">5 projects</span>
     </div>
 
-    <!-- 1. AI Pipeline — network nodes -->
+    <!-- 1. FreshNest — bar chart + donut visual -->
+    <div class="project">
+      <div class="project-visual tint-green">
+        <svg class="bgviz" viewBox="0 0 920 165" preserveAspectRatio="xMidYMid slice">
+          <g fill="#b8d4c4" opacity="0.8">
+            <rect x="100" y="95" width="30" height="52" rx="2"/>
+            <rect x="148" y="72" width="30" height="75" rx="2"/>
+            <rect x="196" y="50" width="30" height="97" rx="2"/>
+            <rect x="244" y="80" width="30" height="67" rx="2"/>
+            <rect x="292" y="38" width="30" height="109" rx="2"/>
+            <rect x="340" y="60" width="30" height="87" rx="2"/>
+            <rect x="388" y="88" width="30" height="59" rx="2"/>
+          </g>
+          <polyline points="115,95 163,72 211,50 259,80 307,38 355,60 403,88" fill="none" stroke="#7aaa92" stroke-width="2"/>
+          <circle cx="590" cy="82" r="48" fill="none" stroke="#c5ddd0" stroke-width="22"/>
+          <circle cx="590" cy="82" r="48" fill="none" stroke="#7aaa92" stroke-width="22" stroke-dasharray="120 181" stroke-dashoffset="-45"/>
+          <circle cx="590" cy="82" r="48" fill="none" stroke="#a3c9b8" stroke-width="22" stroke-dasharray="60 181" stroke-dashoffset="-165"/>
+          <g stroke="#c8ddd5" stroke-width="1.2">
+            <line x1="720" y1="35" x2="860" y2="35"/>
+            <line x1="720" y1="58" x2="860" y2="58"/>
+            <line x1="720" y1="81" x2="860" y2="81"/>
+            <line x1="720" y1="104" x2="860" y2="104"/>
+            <line x1="720" y1="127" x2="860" y2="127"/>
+            <line x1="790" y1="30" x2="790" y2="132"/>
+          </g>
+        </svg>
+        <span class="v-icon">Power BI · SQL · Excel</span>
+      </div>
+      <div class="project-body">
+        <h3>Retail Sales &amp; Customer Insights Platform</h3>
+        <p>A full Walmart supplier analytics dashboard built for FreshNest Foods — a fictional CPG company. Covers sales performance, promotional effectiveness, inventory health, regional insights, and executive recommendations across 98,000+ records and 4 retailers. Designed as a consulting engagement simulation from business problem to data-driven recommendations.</p>
+        <div class="tech"><span>Power BI</span><span>SQL</span><span>Excel</span><span>Retail Analytics</span><span>CPG</span><span>DAX</span></div>
+        <a class="project-link" href="https://github.com/RadhikaBadhrinath/FreshNest-Retail-Analytics" target="_blank">View on GitHub →</a>
+      </div>
+    </div>
+
+    <!-- 2. AI Pipeline — network nodes -->
     <div class="project">
       <div class="project-visual tint-blue">
         <svg class="bgviz" viewBox="0 0 920 165" preserveAspectRatio="xMidYMid slice">
@@ -212,7 +248,7 @@
       </div>
     </div>
 
-    <!-- 2. Website — layout wireframe -->
+    <!-- 3. Website — layout wireframe -->
     <div class="project">
       <div class="project-visual tint-warm">
         <svg class="bgviz" viewBox="0 0 920 165" preserveAspectRatio="xMidYMid slice">
@@ -232,35 +268,10 @@
         <span class="v-icon">WordPress · Beaver Builder</span>
       </div>
       <div class="project-body">
-        <h3>Fair Winds Capital Website</h3>
-        <p>Designed and built the website for an investment advisory firm using WordPress and Beaver Builder — a five-page site with a consistent design system and separate content paths for founders and investors.</p>
-        <div class="tech"><span>WordPress</span><span>Beaver Builder</span><span>Design System</span></div>
+        <h3>Corporate Website Design &amp; Development</h3>
+        <p>Designed and built a professional multi-page website for a financial services firm using WordPress and Beaver Builder — covering homepage, about, and audience-specific pages for two distinct user types. Included content strategy, design system implementation, and consistent brand execution across all pages.</p>
+        <div class="tech"><span>WordPress</span><span>Beaver Builder</span><span>Design System</span><span>Content Strategy</span></div>
         <a class="project-link" href="https://fairwinds.capital" target="_blank">Visit site →</a>
-      </div>
-    </div>
-
-    <!-- 3. Fraud — scatter plot with decision boundary -->
-    <div class="project">
-      <div class="project-visual tint-green">
-        <svg class="bgviz" viewBox="0 0 920 165" preserveAspectRatio="xMidYMid slice">
-          <path d="M120 135 Q400 60 820 40" stroke="#cfe0d7" stroke-width="2" fill="none" stroke-dasharray="6 5"/>
-          <g fill="#cde0d6">
-            <circle cx="200" cy="110" r="4"/><circle cx="250" cy="95" r="4"/><circle cx="300" cy="120" r="4"/>
-            <circle cx="340" cy="100" r="4"/><circle cx="400" cy="115" r="4"/><circle cx="450" cy="92" r="4"/>
-            <circle cx="520" cy="105" r="4"/><circle cx="580" cy="118" r="4"/><circle cx="630" cy="98" r="4"/>
-          </g>
-          <g fill="#bcd2c8">
-            <circle cx="320" cy="55" r="4"/><circle cx="420" cy="48" r="4"/><circle cx="520" cy="58" r="4"/>
-            <circle cx="600" cy="44" r="4"/><circle cx="690" cy="52" r="4"/><circle cx="740" cy="40" r="4"/>
-          </g>
-        </svg>
-        <span class="v-icon">Python · Random Forest</span>
-      </div>
-      <div class="project-body">
-        <h3>Credit Card Fraud Detection</h3>
-        <p>A machine learning model built to detect fraudulent transactions while minimizing incorrect fraud classifications. The optimized Random Forest model produced 9 false positives across 71,091 transactions.</p>
-        <div class="tech"><span>Python</span><span>Random Forest</span><span>Scikit-learn</span><span>Model Optimization</span></div>
-        <a class="project-link" href="https://github.com/RadhikaBadhrinath/Credit-Card-Fraud-Detection" target="_blank">View on GitHub →</a>
       </div>
     </div>
 
@@ -292,32 +303,29 @@
       </div>
     </div>
 
-    <!-- 5. SQL — data table rows -->
+    <!-- 5. Credit Card Fraud — scatter plot -->
     <div class="project">
       <div class="project-visual tint-clay">
         <svg class="bgviz" viewBox="0 0 920 165" preserveAspectRatio="xMidYMid slice">
-          <g stroke="#e6dcd8" stroke-width="1.5">
-            <line x1="150" y1="45" x2="770" y2="45"/><line x1="150" y1="73" x2="770" y2="73"/>
-            <line x1="150" y1="101" x2="770" y2="101"/><line x1="150" y1="129" x2="770" y2="129"/>
-            <line x1="305" y1="32" x2="305" y2="142"/><line x1="460" y1="32" x2="460" y2="142"/>
-            <line x1="615" y1="32" x2="615" y2="142"/>
+          <path d="M120 135 Q400 60 820 40" stroke="#e6dcd8" stroke-width="2" fill="none" stroke-dasharray="6 5"/>
+          <g fill="#ded4ce">
+            <circle cx="200" cy="110" r="4"/><circle cx="250" cy="95" r="4"/><circle cx="300" cy="120" r="4"/>
+            <circle cx="340" cy="100" r="4"/><circle cx="400" cy="115" r="4"/><circle cx="450" cy="92" r="4"/>
+            <circle cx="520" cy="105" r="4"/><circle cx="580" cy="118" r="4"/><circle cx="630" cy="98" r="4"/>
+            <circle cx="680" cy="108" r="4"/><circle cx="730" cy="112" r="4"/>
           </g>
-          <g fill="#ebe0db">
-            <rect x="165" y="52" width="90" height="6" rx="3"/><rect x="320" y="52" width="90" height="6" rx="3"/>
-            <rect x="475" y="52" width="90" height="6" rx="3"/><rect x="630" y="52" width="90" height="6" rx="3"/>
-            <rect x="165" y="80" width="90" height="6" rx="3"/><rect x="320" y="80" width="90" height="6" rx="3"/>
-            <rect x="475" y="80" width="90" height="6" rx="3"/><rect x="630" y="80" width="90" height="6" rx="3"/>
-            <rect x="165" y="108" width="90" height="6" rx="3"/><rect x="320" y="108" width="90" height="6" rx="3"/>
-            <rect x="475" y="108" width="90" height="6" rx="3"/><rect x="630" y="108" width="90" height="6" rx="3"/>
+          <g fill="#c8b8b0">
+            <circle cx="320" cy="55" r="4"/><circle cx="420" cy="48" r="4"/><circle cx="520" cy="58" r="4"/>
+            <circle cx="600" cy="44" r="4"/><circle cx="690" cy="52" r="4"/><circle cx="740" cy="40" r="4"/>
           </g>
         </svg>
-        <span class="v-icon">SQL · Data Modeling</span>
+        <span class="v-icon">Python · Random Forest</span>
       </div>
       <div class="project-body">
-        <h3>IPL Match Bidding Analysis</h3>
-        <p>A SQL project analyzing complete match and player data to surface insights that support bidding decisions across IPL matches.</p>
-        <div class="tech"><span>SQL</span><span>Data Modeling</span><span>Analysis</span></div>
-        <a class="project-link" href="https://github.com/RadhikaBadhrinath/IPL-Bidding" target="_blank">View on GitHub →</a>
+        <h3>Credit Card Fraud Detection</h3>
+        <p>A machine learning model built to detect fraudulent transactions while minimizing incorrect fraud classifications. The optimized Random Forest model produced 9 false positives across 71,091 transactions.</p>
+        <div class="tech"><span>Python</span><span>Random Forest</span><span>Scikit-learn</span><span>Model Optimization</span></div>
+        <a class="project-link" href="https://github.com/RadhikaBadhrinath/Credit-Card-Fraud-Detection" target="_blank">View on GitHub →</a>
       </div>
     </div>
 
@@ -326,17 +334,21 @@
   <section class="section" id="about">
     <div class="section-head"><h2>About</h2></div>
     <div class="about-text">
-      <p>I'm a CRM Operations &amp; Data Analyst currently working with an investment advisory firm, where I build automated data pipelines, manage and enrich CRM records, and support reporting and outreach.</p>
-      <p>My background combines <strong>data science</strong>, <strong>investment research</strong>, and <strong>digital execution</strong>. I work mostly with HubSpot, Python, and SQL, and I'm comfortable moving between technical work and business context.</p>
+      <p>I'm a Business Operations and Data Analyst with experience in <strong>sales reporting, KPI tracking, and business intelligence</strong>. I build dashboards, automate reporting workflows, and translate data into clear recommendations that help teams make faster, better decisions.</p>
+      <p>My background combines <strong>data science</strong>, <strong>CRM operations</strong>, and <strong>digital execution</strong>. I work mostly with Power BI, Excel, SQL, and Python, and I'm comfortable moving between technical work and business context. Based in Rogers, AR — focused on roles in CPG, retail, and sales operations.</p>
     </div>
     <div class="skills-block">
       <div class="skills-row">
-        <div class="label">CRM &amp; Operations</div>
-        <div class="items"><span>HubSpot</span><span>Salesforce</span><span>Data Enrichment</span><span>Segmentation</span><span>Workflow Automation</span></div>
+        <div class="label">Data &amp; Analytics</div>
+        <div class="items"><span>Power BI</span><span>SQL</span><span>Excel</span><span>Python</span><span>Tableau</span><span>Statistical Analysis</span></div>
       </div>
       <div class="skills-row">
-        <div class="label">Data &amp; Analytics</div>
-        <div class="items"><span>Python</span><span>SQL</span><span>Excel</span><span>Tableau</span><span>Power BI</span></div>
+        <div class="label">Excel</div>
+        <div class="items"><span>Pivot Tables</span><span>Power Query</span><span>XLOOKUP</span><span>INDEX MATCH</span><span>Data Validation</span></div>
+      </div>
+      <div class="skills-row">
+        <div class="label">CRM &amp; Operations</div>
+        <div class="items"><span>HubSpot</span><span>Salesforce</span><span>Data Enrichment</span><span>Segmentation</span><span>Workflow Automation</span></div>
       </div>
       <div class="skills-row">
         <div class="label">AI &amp; Tools</div>
@@ -350,9 +362,9 @@
     <div class="bg-item">
       <div class="date">2025 — Present</div>
       <div class="info">
-        <h4>CRM Operations &amp; Data Analyst</h4>
+        <h4>Business Operations &amp; Data Analyst</h4>
         <div class="org">Fairwinds Capital</div>
-        <p>Data pipelines, CRM management, reporting, and investor research.</p>
+        <p>Sales reporting, KPI dashboards, CRM data management, and automation pipelines.</p>
       </div>
     </div>
     <div class="bg-item">
@@ -373,7 +385,7 @@
       <div class="date">Certification</div>
       <div class="info">
         <h4>HubSpot Inbound Certified</h4>
-        <div class="org">HubSpot Academy</div>
+        <div class="org">HubSpot Academy · 2026</div>
       </div>
     </div>
   </section>
